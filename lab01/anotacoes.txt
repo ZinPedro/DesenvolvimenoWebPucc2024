@@ -1,0 +1,9 @@
+index.html
+style.css
+
+
+Comandos Terminal:
+mkdir <nome da pasta> => cria pasta
+dir => lista pastas/arquivos
+cd <nome da pasta> => entra na pasta
+type nul> <nome do aruivo + tipo do arquivo(.html)> => cria arquivo
