@@ -11,3 +11,10 @@ body {
 label {
     display: block; /* Faz cada resposta aparecer em uma nova linha */
 }
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem;
+}
