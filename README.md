@@ -25,4 +25,8 @@ Laboratório 64{
     Servidor em Node.JS
     Criação de um servidor em node.js com pagina principal, sobre e erro 404.
     A criação do servidor foi feita com auxilio "Express". (npm install express)
+    Testes
+    Pagina Inicial: curl http://localhost:3000/
+    Sobre: curl http://localhost:3000/about
+    Erro 404: http://localhost:3000/ajjisabcjibajsb
 }
