@@ -17,6 +17,11 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
+// Erro 404
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'erro.html'));
+});
+
 // Inicia o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
