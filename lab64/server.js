@@ -9,6 +9,9 @@ const port = 3000;
 // Configura o Express para servir arquivos estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, 'public')));
 
+//processa dados do formulario
+app.use(express.urlencoded({ extended: true }));
+
 // Rota para a página inicial
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -19,44 +22,24 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
-// Erro 404
-app.use((req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'erro.html'));
+//POST
+app.post('/submit', (req, res) => {
+    res.send(`Dados recebidos: ${JSON.stringify(req.body)}`);
 });
 
-const server = http.createServer((req, res) => {
-    if (req.method === 'POST' && req.url === '/submit') {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-            res.end(`Dados recebidos: ${body}`);
-        });
-    } else if (req.method === 'POST' && req.url === '/upload') {
-        let fileData = '';
-        req.on('data', chunk => {
-            fileData += chunk.toString();
-        });
-        req.on('end', () => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-            res.end('Upload simulado com sucesso!');
-        });
-    }else {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-        res.end('Rota não encontrada');
-    }
+//Upload
+app.post('/upload', (req, res) => {
+    let fileData = '';
+    req.on('data', chunk => fileData += chunk.toString());
+    req.on('end', () => res.send('Upload simulado com sucesso!'));
+});
+
+// Erro 404
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', 'erro.html'));
 });
 
 // Inicia o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
-});
-
-server.listen(port, hostname, () => {
-    console.log(`Servidor rodando em http://${hostname}:${port}/`);
 });
