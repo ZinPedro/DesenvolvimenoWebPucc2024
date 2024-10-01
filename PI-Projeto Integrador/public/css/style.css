@@ -1,0 +1,53 @@
+:root {
+    --links__nav:#000;
+    --background-cabecalho: #EFEFEF;
+    --background-nav: #7b7b7b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: var(--background-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px #000
+}
+
+.container__logoPUC {
+    width: 11rem;
+    height: 5.5rem;
+}
+
+.container__logoSite {
+    width: 10rem;
+    height: 6rem;
+}
+
+.navegacao__menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    background-color: var(--background-nav);
+    box-shadow: 0 0 10px #000;
+    padding: 0.75rem;
+}
+
+.navegacao__item {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--links__nav);
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
