@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SistemaTiza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">SistemaTIza</h1>
+    </header>
+    <main class="corpo">
+        <h2 class="corpo__titulo">Soliciste o Orçamento do seu projeto conosco.</h2>
+        <p class="corpo__texto">Basta preencher o formulário.</p>
+        <form class="formulario" action="https://formsubmit.co/pedro.hcz1@puccampinas.edu.br" method="POST">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="name" placeholder="Nome" required >
+
+            <label for="email">Digite seu E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digiteseuemail@email.com" required >
+
+            <label for="telefone">Digite seu Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required >
+
+            <label for="projeto">Descreva seu projeto:</label>
+            <input type="text" id="projeto" name="projeto" placeholder="Descreva seu projeto" required >
+
+            <label for="orçamento">Qual o orçamento estimado?</label>
+            <input type="text" id="orçamento" name="orçamento" placeholder="Digite o orçamento estimado" required >
+
+            <label for="orçamento">Qual é o prazo desejado para o orçamento?</label>
+            <input type="date" id="prazo" name="prazo" placeholder="xx/xx/xxxx" required >
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    
+    
+</body>
+</html>
