@@ -30,3 +30,7 @@ Laboratório 64{
     Sobre: curl http://localhost:3000/about
     Erro 404: http://localhost:3000/ajjisabcjibajsb
 }
+
+Laboratório 128{
+    Criação de um Formulário com endereçamento ao e-mail pessoal.
+}
